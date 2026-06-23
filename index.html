@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Грузчики и разнорабочие · Круглосуточно</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.png" type="image/png" />
+</head>
+<body>
+
+    <!-- ===== ЛИПКИЙ ХЕДЕР (ограничен по ширине) ===== -->
+    <header class="header" id="stickyHeader">
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html" style="text-decoration:none;color:inherit;">
+                    <h1>Грузчики 24/7</h1>
+                </a>
+            </div>
+            <div class="header-right">
+                <button id="themeToggle" class="theme-btn">🌙 Тёмная</button>
+                <a href="tel:+79001234567" class="phone-button">+7 (914) 337-13-27</a>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Главная</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Услуги ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pereezdy.html">Переезды</a></li>
+                        <li><a href="stroitelnye.html">Строительные работы</a></li>
+                        <li><a href="razgruzka.html">Разгрузка товаров</a></li>
+                        <li><a href="uborka.html">Уборка и вывоз мусора</a></li>
+                        <li><a href="gruzoperevozki.html">Грузоперевозки</a></li>
+                        <li style="border-top:1px solid #cc0000;margin:0.3rem 0;"></li>
+                        <li><a href="proizvodstvo.html">Аутсорсинг на производство</a></li>
+                        <li><a href="riteyl.html">Аутсорсинг для ритейла</a></li>
+                        <li><a href="sklad.html">Аутсорсинг склада</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Персонал ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="gruzchiki.html">Грузчики</a></li>
+                        <li><a href="raznorabocie.html">Разнорабочие</a></li>
+                    </ul>
+                </li>
+                <li><a href="#order">Заявка</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
+    <div class="page-wrapper">
+        <div class="content-wrapper">
+
+            <!-- ===== ГЛАВНАЯ ===== -->
+            <section id="home">
+                <div class="hero">
+                    <div class="hero-text">
+                        <div class="sub-badge">Круглосуточно · 24/7</div>
+                        <h2>Грузчики и разнорабочие</h2>
+                        <p class="hero-desc">Профессиональная помощь в Находке. <strong>Работаем 24 часа в сутки, 7 дней в неделю.</strong></p>
+                        <a href="#order" class="hero-button">Оставить заявку</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== ПРЕИМУЩЕСТВА ===== -->
+            <section class="advantages">
+                <div class="advantage-item">
+                    <div class="advantage-icon">⏰</div>
+                    <div class="advantage-text">
+                        <h3>Круглосуточно</h3>
+                        <p>Работаем 24/7, без выходных и праздников</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">💪</div>
+                    <div class="advantage-text">
+                        <h3>Опытные сотрудники</h3>
+                        <p>Профессиональные грузчики и разнорабочие</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🚀</div>
+                    <div class="advantage-text">
+                        <h3>Быстрый выезд</h3>
+                        <p>Приезжаем в течение 30–60 минут</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">💰</div>
+                    <div class="advantage-text">
+                        <h3>Доступные цены</h3>
+                        <p>Фиксированные тарифы без скрытых платежей</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== УСЛУГИ ===== -->
+            <h2 class="section-title" id="services">Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">📦</div>
+                    <h3>Переезды</h3>
+                    <p>Квартирные, офисные и дачные переезды любой сложности</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Строительные работы</h3>
+                    <p>Подсобные работы на стройплощадках, уборка территории</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🛒</div>
+                    <h3>Разгрузка товаров</h3>
+                    <p>Разгрузка фур, контейнеров, магазинов и складов</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🗑️</div>
+                    <h3>Уборка и вывоз мусора</h3>
+                    <p>Уборка помещений, вывоз строительного и бытового мусора</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📋</div>
+                    <h3>Разнорабочие</h3>
+                    <p>Любые подсобные работы: покраска, сборка мебели, упаковка</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🚛</div>
+                    <h3>Грузоперевозки</h3>
+                    <p>Перевозка мебели, техники, стройматериалов</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🏭</div>
+                    <h3>Аутсорсинг на производство</h3>
+                    <p>Квалифицированные рабочие для заводов и производств</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🛍️</div>
+                    <h3>Аутсорсинг для ритейла</h3>
+                    <p>Персонал для магазинов, торговых центров и розничных сетей</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📦</div>
+                    <h3>Аутсорсинг склада</h3>
+                    <p>Комплектовщики, грузчики, кладовщики для складских комплексов</p>
+                </div>
+            </div>
+
+            <!-- ===== ПОДРОБНЕЕ ОБ АУТСОРСИНГЕ ===== -->
+            <h2 class="section-title">Аутсорсинг персонала</h2>
+            <div class="outsourcing-grid">
+                <div class="outsourcing-item">
+                    <div class="outsourcing-icon">🏭</div>
+                    <h3>На производство</h3>
+                    <ul>
+                        <li>Квалифицированные рабочие</li>
+                        <li>Сменный график</li>
+                        <li>Оформление по ТК РФ</li>
+                        <li>Контроль качества</li>
+                    </ul>
+                </div>
+                <div class="outsourcing-item">
+                    <div class="outsourcing-icon">🛍️</div>
+                    <h3>Для ритейла</h3>
+                    <ul>
+                        <li>Продавцы-консультанты</li>
+                        <li>Кассиры и фасовщики</li>
+                        <li>Товароведы</li>
+                        <li>Гибкий график</li>
+                    </ul>
+                </div>
+                <div class="outsourcing-item">
+                    <div class="outsourcing-icon">📦</div>
+                    <h3>Складской персонал</h3>
+                    <ul>
+                        <li>Грузчики-комплектовщики</li>
+                        <li>Кладовщики и стропальщики</li>
+                        <li>Работа с ТСД и 1С</li>
+                        <li>Круглосуточная работа</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== ФОРМА ЗАЯВКИ (Яндекс Формы) ===== -->
+            <h2 class="section-title" id="order">Оставить заявку</h2>
+            <div class="form-container">
+                <!-- ВСТАВЬТЕ СЮДА ВАШ КОД ОТ ЯНДЕКС ФОРМ -->
+                <iframe src="https://forms.yandex.ru/u/<script src="https://forms.yandex.ru/_static/embed.js"></script><iframe src="https://forms.yandex.ru/u/6a3a60756d2d733ed1423b87?iframe=1" frameborder="0" name="ya-form-6a3a60756d2d733ed1423b87" width="650"></iframe>/?iframe=1" 
+                        width="100%" 
+                        height="600" 
+                        frameborder="0"
+                        style="border-radius:0;">
+                </iframe>
+                <p class="form-note">Наш менеджер свяжется с вами в течение 10 минут</p>
+            </div>
+
+            <!-- ===== КОНТАКТЫ ===== -->
+            <h2 class="section-title" id="contacts">Контакты</h2>
+            <div class="contacts-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <h3>Телефон</h3>
+                    <a href="tel:+79001234567">+7 (914) 337-13-27</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <a href="mailto:kimvitaly_81@mail.ru">kimvitaly_81@mail.ru</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <h3>Режим работы</h3>
+                    <p><strong>Круглосуточно</strong><br />Без выходных и праздников</p>
+                </div>
+            </div>
+
+            <!-- ===== ПОДВАЛ ===== -->
+            <footer class="footer">
+                <p>© 2026 Грузчики и разнорабочие · Круглосуточно 24/7</p>
+                <p style="margin-top:0.5rem;font-size:0.8rem;">Аутсорсинг персонала для производства, ритейла и склада</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

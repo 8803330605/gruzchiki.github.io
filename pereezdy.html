@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Переезды · Грузчики 24/7</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #1a1a1a;
+            padding: 2rem 1rem;
+    background-image: url('images/фон-переезды.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+        }
+        @media (min-width: 600px) { .container { padding: 3rem 2.5rem; } }
+
+        /* ===== ШАПКА ===== */
+        .header { border-bottom: 3px solid #cc0000; padding-bottom: 1.5rem; margin-bottom: 2rem; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .header-right { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
+        .logo h1 { font-size: 1.8rem; font-weight: 800; color: #cc0000; margin: 0; }
+        .theme-btn {
+            background: transparent; border: 2px solid #cc0000; color: #cc0000;
+            font-weight: 700; font-size: 0.9rem; padding: 0.4rem 1rem;
+            cursor: pointer; transition: 0.3s ease; white-space: nowrap;
+        }
+        .theme-btn:hover { background: #cc0000; color: white; }
+        .phone-button {
+            display: inline-block; background: #cc0000; color: white;
+            font-weight: 700; font-size: 1.2rem; padding: 0.6rem 1.8rem;
+            text-decoration: none; transition: 0.3s ease; white-space: nowrap;
+        }
+        .phone-button:hover { background: #990000; }
+
+        /* ===== МЕНЮ ===== */
+        .main-nav { border-top: 2px solid #cc0000; padding-top: 0.8rem; margin-top: 0.5rem; }
+        .nav-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; padding: 0; margin: 0; }
+        .nav-list > li > a {
+            text-decoration: none; color: #1a1a1a; font-weight: 600; font-size: 1rem;
+            padding: 0.4rem 0.2rem; transition: 0.3s; border-bottom: 2px solid transparent;
+        }
+        .nav-list > li > a:hover { color: #cc0000; border-bottom-color: #cc0000; }
+
+        /* ===== ВЫПАДАЮЩИЙ СПИСОК ===== */
+        .dropdown { position: relative; }
+        .dropdown-toggle { cursor: pointer; }
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 0;
+            background: #ffffff; min-width: 220px; box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+            padding: 0.5rem 0; list-style: none; border: 1px solid #cc0000; z-index: 100;
+        }
+        .dropdown-menu li a {
+            display: block; padding: 0.5rem 1.2rem; color: #1a1a1a;
+            text-decoration: none; font-size: 0.95rem; transition: 0.2s;
+        }
+        .dropdown-menu li a:hover { background: #cc0000; color: white; }
+        .dropdown.open .dropdown-menu { display: block; }
+
+        @media (max-width: 768px) {
+            .nav-list { flex-direction: column; gap: 0.3rem; }
+            .dropdown-menu {
+                position: static; box-shadow: none; border: none;
+                padding-left: 1rem; background: #f5f5f5; margin-top: 0.2rem;
+                border-left: 3px solid #cc0000;
+            }
+            .dropdown.open .dropdown-menu { display: block; }
+            .header-top { flex-direction: column; align-items: stretch; text-align: center; }
+            .header-right { justify-content: center; }
+            .logo h1 { font-size: 1.4rem; }
+        }
+
+        /* ===== СТРАНИЦА ===== */
+        .page-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #cc0000; }
+        .page-header .back-link { color: #cc0000; text-decoration: none; font-weight: 600; font-size: 1.1rem; }
+        .page-header .back-link:hover { text-decoration: underline; }
+        .page-header h1 { font-size: 2rem; margin: 0; }
+        .detail-section { background: #ffffff; padding: 2rem; margin-bottom: 2rem; border: 1px solid #cc0000; }
+        .detail-section h2 { color: #1a1a1a; margin-bottom: 1rem; }
+        .detail-section h3 { color: #1a1a1a; margin: 1.5rem 0 0.8rem; }
+        .detail-section p { color: #333333; font-size: 1.05rem; margin-bottom: 1rem; }
+        .detail-section ul { list-style: none; padding: 0; }
+        .detail-section ul li { padding: 0.5rem 0; border-bottom: 1px dashed #e0e0e0; color: #333333; font-size: 1.05rem; }
+        .detail-section ul li:last-child { border-bottom: none; }
+
+        .price-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .price-table th, .price-table td { padding: 0.7rem 1rem; border: 1px solid #cc0000; text-align: left; }
+        .price-table th { background: #cc0000; color: white; font-weight: 700; }
+        .price-table tr:nth-child(even) { background: #f5f5f5; }
+        .price-table tr:hover { background: #ffe6e6; }
+        .price-note { margin-top: 1rem; color: #555555; font-size: 0.9rem; }
+
+        .order-btn {
+            display: inline-block; background: #cc0000; color: white; font-weight: 700;
+            padding: 0.8rem 2rem; text-decoration: none; transition: 0.3s; margin-top: 1rem;
+        }
+        .order-btn:hover { background: #990000; }
+
+        .footer { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 2px solid #cc0000; color: #555555; font-size: 0.9rem; text-align: center; }
+
+        /* ===== ТЁМНАЯ ТЕМА ===== */
+        .dark-mode { background: #1a1a1a; }
+        .dark-mode .container { background: #2a2a2a; }
+        .dark-mode .page-header h1 { color: #f0f0f0; }
+        .dark-mode .detail-section { background: #333333; border-color: #cc0000; }
+        .dark-mode .detail-section h2 { color: #f0f0f0; }
+        .dark-mode .detail-section h3 { color: #f0f0f0; }
+        .dark-mode .detail-section p { color: #cccccc; }
+        .dark-mode .detail-section ul li { color: #cccccc; border-color: #444444; }
+        .dark-mode .price-table td { border-color: #cc0000; }
+        .dark-mode .price-table tr:nth-child(even) { background: #2a2a2a; }
+        .dark-mode .price-table tr:hover { background: #442222; }
+        .dark-mode .nav-list > li > a { color: #f0f0f0; }
+        .dark-mode .dropdown-menu { background: #2a2a2a; }
+        .dark-mode .dropdown-menu li a { color: #f0f0f0; }
+        .dark-mode .footer { color: #aaaaaa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-top">
+                <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;"><h1> Грузчики 24/7</h1></a></div>
+                <div class="header-right">
+                    <button id="themeToggle" class="theme-btn">🌙 Тёмная</button>
+                    <a href="tel:+79001234567" class="phone-button"> +7 (900) 123-45-67</a>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html"> Главная</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"> Услуги ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pereezdy.html">Переезды</a></li>
+                            <li><a href="stroitelnye.html">Строительные работы</a></li>
+                            <li><a href="razgruzka.html">Разгрузка товаров</a></li>
+                            <li><a href="uborka.html">Уборка и вывоз мусора</a></li>
+                            <li><a href="gruzoperevozki.html">Грузоперевозки</a></li>
+                            <li style="border-top:1px solid #cc0000;margin:0.3rem 0;"></li>
+                            <li><a href="proizvodstvo.html">Аутсорсинг на производство</a></li>
+                            <li><a href="riteyl.html">Аутсорсинг для ритейла</a></li>
+                            <li><a href="sklad.html">Аутсорсинг склада</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"> Персонал ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="gruzchiki.html">Грузчики</a></li>
+                            <li><a href="raznorabocie.html">Разнорабочие</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#order"> Заявка</a></li>
+                    <li><a href="index.html#contacts"> Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="page-header">
+            <a href="index.html" class="back-link">← Назад</a>
+            <h1> Переезды</h1>
+        </div>
+
+        <div class="detail-section">
+            <h2>Квартирные, офисные и дачные переезды</h2>
+            <p>Мы организуем переезды любой сложности. Наши грузчики аккуратно упакуют, погрузят и доставят ваши вещи в целости и сохранности.</p>
+            <h3> Что входит в услугу</h3>
+            <ul>
+                <li>✅ Упаковка вещей в коробки и плёнку</li>
+                <li>✅ Разборка и сборка мебели</li>
+                <li>✅ Погрузка и выгрузка</li>
+                <li>✅ Аккуратная транспортировка</li>
+                <li>✅ Расстановка мебели на новом месте</li>
+            </ul>
+        </div>
+
+        <div class="detail-section">
+            <h3> Стоимость переездов</h3>
+            <table class="price-table">
+                <tr><th>Тип переезда</th><th>Стоимость</th></tr>
+                <tr><td>Квартирный переезд (1-комн.)</td><td>от 3 000 ₽</td></tr>
+                <tr><td>Квартирный переезд (2-комн.)</td><td>от 4 500 ₽</td></tr>
+                <tr><td>Квартирный переезд (3-комн.)</td><td>от 6 000 ₽</td></tr>
+                <tr><td>Офисный переезд</td><td>от 5 000 ₽</td></tr>
+                <tr><td>Дачный переезд</td><td>от 2 500 ₽</td></tr>
+            </table>
+            <p class="price-note">* Цены указаны с учётом 2 грузчиков и машины. Точную стоимость уточняйте по телефону.</p>
+            <a href="index.html#order" class="order-btn"> Заказать переезд</a>
+        </div>
+
+        <footer class="footer"><p>© 2026 Грузчики и разнорабочие · Круглосуточно 24/7</p></footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                if (themeToggle) themeToggle.textContent = '☀️ Светлая';
+            }
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    document.body.classList.toggle('dark-mode');
+                    if (document.body.classList.contains('dark-mode')) {
+                        this.textContent = '☀️ Светлая';
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        this.textContent = '🌙 Тёмная';
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+            }
+            document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.parentElement.classList.toggle('open');
+                });
+            });
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown').forEach(function(item) {
+                        item.classList.remove('open');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
