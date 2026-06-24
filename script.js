@@ -1,3 +1,4 @@
+// ===== ПЕРЕКЛЮЧЕНИЕ ТЕМЫ =====
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
 
