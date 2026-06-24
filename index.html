@@ -48,7 +48,8 @@
                     </ul>
                 </li>
                 <li><a href="#order">Заявка</a></li>
-                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="contacts.html"> Контакты</a></li>
+
             </ul>
         </nav>
     </header>
@@ -184,7 +185,35 @@
                 </ul>
             </div>
         </div>
-
+<!-- ===== КАЛЬКУЛЯТОР СТОИМОСТИ ===== -->
+<h2 class="section-title">🧮 Калькулятор стоимости</h2>
+<div class="calculator-container">
+    <div class="calculator">
+        <div class="calc-row">
+            <label for="calcHours">Количество часов:</label>
+            <input type="number" id="calcHours" value="2" min="1" max="24" />
+        </div>
+        <div class="calc-row">
+            <label for="calcWorkers">Количество грузчиков:</label>
+            <input type="number" id="calcWorkers" value="2" min="1" max="10" />
+        </div>
+        <div class="calc-row">
+            <label for="calcType">Тип работы:</label>
+            <select id="calcType">
+                <option value="500">Переезд</option>
+                <option value="400">Разгрузка</option>
+                <option value="600">Строительные работы</option>
+                <option value="350">Уборка</option>
+            </select>
+        </div>
+        <div class="calc-result">
+            <span>💰 Примерная стоимость:</span>
+            <span class="calc-price" id="calcPrice">2 000 ₽</span>
+        </div>
+        <button onclick="calcPrice()" class="calc-btn">Рассчитать</button>
+        <p class="calc-note">* Точная стоимость уточняется по телефону</p>
+    </div>
+</div>
         <!-- ===== ФОРМА ЗАЯВКИ (Яндекс Формы) ===== -->
         <h2 class="section-title" id="order">Оставить заявку</h2>
         <div class="form-container">

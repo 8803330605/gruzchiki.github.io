@@ -60,3 +60,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// ===== КАЛЬКУЛЯТОР СТОИМОСТИ =====
+function calcPrice() {
+    const hours = parseInt(document.getElementById('calcHours').value) || 1;
+    const workers = parseInt(document.getElementById('calcWorkers').value) || 1;
+    const rate = parseInt(document.getElementById('calcType').value) || 500;
+    const total = hours * workers * rate;
+    document.getElementById('calcPrice').textContent = total.toLocaleString() + ' ₽';
+}
+
+// Автоматический расчёт при изменении полей
+document.addEventListener('DOMContentLoaded', function() {
+    const inputs = document.querySelectorAll('#calcHours, #calcWorkers, #calcType');
+    inputs.forEach(function(input) {
+        input.addEventListener('change', calcPrice);
+        input.addEventListener('input', calcPrice);
+    });
+    // Первый расчёт
+    calcPrice();
+});
