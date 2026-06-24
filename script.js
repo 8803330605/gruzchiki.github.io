@@ -2,23 +2,48 @@
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
 
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-        if (themeToggle) themeToggle.textContent = '☀️ Светлая';
+    // Функция применения темы
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            document.body.classList.add('dark-mode');
+            if (themeToggle) themeToggle.textContent = '☀️ Светлая';
+        } else {
+            document.body.classList.remove('dark-mode');
+            if (themeToggle) themeToggle.textContent = '🌙 Тёмная';
+        }
+        localStorage.setItem('theme', theme);
     }
 
+    // Проверяем сохранённую тему
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme) {
+        // Если пользователь уже выбирал тему — используем её
+        setTheme(savedTheme);
+    } else {
+        // Если нет — проверяем системную тему
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(systemDark ? 'dark' : 'light');
+    }
+
+    // Кнопка переключения
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
-            if (document.body.classList.contains('dark-mode')) {
-                this.textContent = '☀️ Светлая';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                this.textContent = '🌙 Тёмная';
-                localStorage.setItem('theme', 'light');
-            }
+            const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
         });
     }
+
+    // СЛУШАЕМ ИЗМЕНЕНИЕ СИСТЕМНОЙ ТЕМЫ, НО НЕ ПЕРЕЗАПИСЫВАЕМ ВЫБОР ПОЛЬЗОВАТЕЛЯ
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        // Если пользователь уже выбирал тему вручную — не трогаем
+        if (localStorage.getItem('theme')) {
+            return;
+        }
+        // Иначе подстраиваемся под систему
+        setTheme(e.matches ? 'dark' : 'light');
+    });
 
     // ===== ВЫПАДАЮЩЕЕ МЕНЮ =====
     document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
@@ -47,30 +72,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
-
-// ===== АВТООПРЕДЕЛЕНИЕ ТЁМНОЙ ТЕМЫ СИСТЕМЫ =====
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    // Если в системе включена тёмная тема
-    if (!localStorage.getItem('theme')) {
-        document.body.classList.add('dark-mode');
-        const themeToggle = document.getElementById('themeToggle');
-        if (themeToggle) themeToggle.textContent = '☀️ Светлая';
-        localStorage.setItem('theme', 'dark');
-    }
-}
-
-// Слушаем изменение темы в системе
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-    if (e.matches) {
-        document.body.classList.add('dark-mode');
-        const themeToggle = document.getElementById('themeToggle');
-        if (themeToggle) themeToggle.textContent = '☀️ Светлая';
-        localStorage.setItem('theme', 'dark');
-    } else {
-        document.body.classList.remove('dark-mode');
-        const themeToggle = document.getElementById('themeToggle');
-        if (themeToggle) themeToggle.textContent = '🌙 Тёмная';
-        localStorage.setItem('theme', 'light');
-    }
 });
