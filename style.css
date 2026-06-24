@@ -815,15 +815,12 @@ body {
     width: 60px;
     height: 60px;
     background: #cc0000;
-    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(204, 0, 0, 0.4);
     z-index: 999;
-    transition: all 0.3s ease;
-    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(204, 0, 0, 0.4);
     animation: phone-pulse 2s infinite;
 }
 
