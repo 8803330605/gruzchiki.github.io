@@ -1,8 +1,6 @@
-// ===== ПЕРЕКЛЮЧЕНИЕ ТЕМЫ =====
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
 
-    // Функция применения темы
     function setTheme(theme) {
         if (theme === 'dark') {
             document.body.classList.add('dark-mode');
@@ -14,34 +12,26 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('theme', theme);
     }
 
-    // Проверяем сохранённую тему
     const savedTheme = localStorage.getItem('theme');
 
     if (savedTheme) {
-        // Если пользователь уже выбирал тему — используем её
         setTheme(savedTheme);
     } else {
-        // Если нет — проверяем системную тему
         const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         setTheme(systemDark ? 'dark' : 'light');
     }
 
-    // Кнопка переключения
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
-            const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
+            const isDark = document.body.classList.contains('dark-mode');
+            setTheme(isDark ? 'light' : 'dark');
         });
     }
 
-    // СЛУШАЕМ ИЗМЕНЕНИЕ СИСТЕМНОЙ ТЕМЫ, НО НЕ ПЕРЕЗАПИСЫВАЕМ ВЫБОР ПОЛЬЗОВАТЕЛЯ
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-        // Если пользователь уже выбирал тему вручную — не трогаем
         if (localStorage.getItem('theme')) {
             return;
         }
-        // Иначе подстраиваемся под систему
         setTheme(e.matches ? 'dark' : 'light');
     });
 
@@ -49,8 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
-            const parent = this.parentElement;
-            parent.classList.toggle('open');
+            this.parentElement.classList.toggle('open');
         });
     });
 
