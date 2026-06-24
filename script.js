@@ -1,14 +1,13 @@
-// ===== ПЕРЕКЛЮЧЕНИЕ ТЕМЫ =====
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
 
     function setTheme(theme) {
         if (theme === 'dark') {
             document.body.classList.add('dark-mode');
-            if (themeToggle) themeToggle.textContent = '☀️ Светлая';
+            if (themeToggle) themeToggle.textContent = 'Светлая тема';
         } else {
             document.body.classList.remove('dark-mode');
-            if (themeToggle) themeToggle.textContent = '🌙 Тёмная';
+            if (themeToggle) themeToggle.textContent = 'Тёмная тема';
         }
         localStorage.setItem('theme', theme);
     }
@@ -36,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         setTheme(e.matches ? 'dark' : 'light');
     });
 
-    // ===== ВЫПАДАЮЩЕЕ МЕНЮ =====
     document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
@@ -52,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ===== ПЛАВНАЯ ПРОКРУТКА =====
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
             const target = document.querySelector(this.getAttribute('href'));

@@ -102,6 +102,34 @@
     background-position: center;
     background-attachment: fixed;
 }
+
+/* ===== КОНТЕЙНЕР ===== */
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+    background: var(--bg-container);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    padding: 2rem 1.5rem;
+    box-shadow: 0 10px 40px var(--shadow-color);
+    transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
+}
+
+/* ===== ХЕДЕР ===== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    max-width: 1050px;
+    margin: 0 auto;
+    background: var(--bg-container);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    padding: 1.5rem 2rem 1.2rem;
+    border-bottom: 3px solid var(--red);
+    transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    box-sizing: border-box;
+}
     </style>
 </head>
 <body>
