@@ -4,110 +4,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Грузчики · Грузчики 24/7</title>
+    <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.png" type="image/png" />
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            background: #f5f5f5;
+        .page-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #cc0000;
+        }
+        .page-header .back-link {
+            color: #cc0000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .page-header .back-link:hover {
+            text-decoration: underline;
+        }
+        .page-header h1 {
+            font-size: 2rem;
+            margin: 0;
             color: #1a1a1a;
-            padding: 2rem 1rem;
-    background-image: url('images/фон-переезды.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
+        }
+        .detail-section {
             background: #ffffff;
-            padding: 2rem 1.5rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #cc0000;
         }
-        @media (min-width: 600px) { .container { padding: 3rem 2.5rem; } }
-
-        .header { border-bottom: 3px solid #cc0000; padding-bottom: 1.5rem; margin-bottom: 2rem; }
-        .header-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .header-right { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
-        .logo h1 { font-size: 1.8rem; font-weight: 800; color: #cc0000; margin: 0; }
-        .theme-btn {
-            background: transparent; border: 2px solid #cc0000; color: #cc0000;
-            font-weight: 700; font-size: 0.9rem; padding: 0.4rem 1rem;
-            cursor: pointer; transition: 0.3s ease; white-space: nowrap;
+        .detail-section h2 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
         }
-        .theme-btn:hover { background: #cc0000; color: white; }
-        .phone-button {
-            display: inline-block; background: #cc0000; color: white;
-            font-weight: 700; font-size: 1.2rem; padding: 0.6rem 1.8rem;
-            text-decoration: none; transition: 0.3s ease; white-space: nowrap;
+        .detail-section h3 {
+            color: #1a1a1a;
+            margin: 1.5rem 0 0.8rem;
         }
-        .phone-button:hover { background: #990000; }
-
-        .main-nav { border-top: 2px solid #cc0000; padding-top: 0.8rem; margin-top: 0.5rem; }
-        .nav-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; padding: 0; margin: 0; }
-        .nav-list > li > a {
-            text-decoration: none; color: #1a1a1a; font-weight: 600; font-size: 1rem;
-            padding: 0.4rem 0.2rem; transition: 0.3s; border-bottom: 2px solid transparent;
+        .detail-section p {
+            color: #333333;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
         }
-        .nav-list > li > a:hover { color: #cc0000; border-bottom-color: #cc0000; }
-
-        .dropdown { position: relative; }
-        .dropdown-toggle { cursor: pointer; }
-        .dropdown-menu {
-            display: none; position: absolute; top: 100%; left: 0;
-            background: #ffffff; min-width: 220px; box-shadow: 0 10px 30px rgba(0,0,0,0.10);
-            padding: 0.5rem 0; list-style: none; border: 1px solid #cc0000; z-index: 100;
+        .detail-section ul {
+            list-style: none;
+            padding: 0;
         }
-        .dropdown-menu li a {
-            display: block; padding: 0.5rem 1.2rem; color: #1a1a1a;
-            text-decoration: none; font-size: 0.95rem; transition: 0.2s;
+        .detail-section ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #e0e0e0;
+            color: #333333;
+            font-size: 1.05rem;
         }
-        .dropdown-menu li a:hover { background: #cc0000; color: white; }
-        .dropdown.open .dropdown-menu { display: block; }
-
-        @media (max-width: 768px) {
-            .nav-list { flex-direction: column; gap: 0.3rem; }
-            .dropdown-menu {
-                position: static; box-shadow: none; border: none;
-                padding-left: 1rem; background: #f5f5f5; margin-top: 0.2rem;
-                border-left: 3px solid #cc0000;
-            }
-            .dropdown.open .dropdown-menu { display: block; }
-            .header-top { flex-direction: column; align-items: stretch; text-align: center; }
-            .header-right { justify-content: center; }
-            .logo h1 { font-size: 1.4rem; }
+        .detail-section ul li:last-child {
+            border-bottom: none;
         }
-
-        .page-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #cc0000; }
-        .page-header .back-link { color: #cc0000; text-decoration: none; font-weight: 600; font-size: 1.1rem; }
-        .page-header .back-link:hover { text-decoration: underline; }
-        .page-header h1 { font-size: 2rem; margin: 0; }
-        .detail-section { background: #ffffff; padding: 2rem; margin-bottom: 2rem; border: 1px solid #cc0000; }
-        .detail-section h2 { color: #1a1a1a; margin-bottom: 1rem; }
-        .detail-section h3 { color: #1a1a1a; margin: 1.5rem 0 0.8rem; }
-        .detail-section p { color: #333333; font-size: 1.05rem; margin-bottom: 1rem; }
-        .detail-section ul { list-style: none; padding: 0; }
-        .detail-section ul li { padding: 0.5rem 0; border-bottom: 1px dashed #e0e0e0; color: #333333; font-size: 1.05rem; }
-        .detail-section ul li:last-child { border-bottom: none; }
-
-        .price-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        .price-table th, .price-table td { padding: 0.7rem 1rem; border: 1px solid #cc0000; text-align: left; }
-        .price-table th { background: #cc0000; color: white; font-weight: 700; }
-        .price-table tr:nth-child(even) { background: #f5f5f5; }
-        .price-table tr:hover { background: #ffe6e6; }
-        .price-note { margin-top: 1rem; color: #555555; font-size: 0.9rem; }
-
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .price-table th,
+        .price-table td {
+            padding: 0.7rem 1rem;
+            border: 1px solid #cc0000;
+            text-align: left;
+        }
+        .price-table th {
+            background: #cc0000;
+            color: white;
+            font-weight: 700;
+        }
+        .price-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        .price-table tr:hover {
+            background: #ffe6e6;
+        }
+        .price-note {
+            margin-top: 1rem;
+            color: #555555;
+            font-size: 0.9rem;
+        }
         .order-btn {
-            display: inline-block; background: #cc0000; color: white; font-weight: 700;
-            padding: 0.8rem 2rem; text-decoration: none; transition: 0.3s; margin-top: 1rem;
+            display: inline-block;
+            background: #cc0000;
+            color: white;
+            font-weight: 700;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            transition: 0.3s;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
         }
-        .order-btn:hover { background: #990000; }
-
-        .footer { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 2px solid #cc0000; color: #555555; font-size: 0.9rem; text-align: center; }
-
-        .dark-mode { background: #1a1a1a; }
-        .dark-mode .container { background: #2a2a2a; }
+        .order-btn:hover {
+            background: #990000;
+        }
         .dark-mode .page-header h1 { color: #f0f0f0; }
         .dark-mode .detail-section { background: #333333; border-color: #cc0000; }
         .dark-mode .detail-section h2 { color: #f0f0f0; }
@@ -117,46 +112,23 @@
         .dark-mode .price-table td { border-color: #cc0000; }
         .dark-mode .price-table tr:nth-child(even) { background: #2a2a2a; }
         .dark-mode .price-table tr:hover { background: #442222; }
-        .dark-mode .nav-list > li > a { color: #f0f0f0; }
-        .dark-mode .dropdown-menu { background: #2a2a2a; }
-        .dark-mode .dropdown-menu li a { color: #f0f0f0; }
-        .dark-mode .footer { color: #aaaaaa; }
-        /* ===== ТАБЛИЦЫ В ТЁМНОЙ ТЕМЕ ===== */
-.dark-mode .price-table td {
-    color: #f0f0f0 !important;
-    border-color: #cc0000;
-}
-
-.dark-mode .price-table tr:nth-child(even) {
-    background: rgba(30, 30, 30, 0.5);
-}
-
-.dark-mode .price-table tr:hover {
-    background: rgba(68, 34, 34, 0.6);
-}
-
-.dark-mode .price-table th {
-    background: #cc0000;
-    color: #ffffff !important;
-    border-color: #cc0000;
-}
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
             <div class="header-top">
-                <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;"><h1> Грузчики 24/7</h1></a></div>
+                <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;"><h1>🚚 Грузчики 24/7</h1></a></div>
                 <div class="header-right">
                     <button id="themeToggle" class="theme-btn">🌙 Тёмная</button>
-                    <a href="tel:+79001234567" class="phone-button"> +7 (914) 337-13-27</a>
+                    <a href="tel:+79001234567" class="phone-button">📞 +7 (914) 337-13-27</a>
                 </div>
             </div>
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html"> Главная</a></li>
+                    <li><a href="index.html">🏠 Главная</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle"> Услуги ▾</a>
+                        <a href="#" class="dropdown-toggle">📦 Услуги ▾</a>
                         <ul class="dropdown-menu">
                             <li><a href="pereezdy.html">Переезды</a></li>
                             <li><a href="stroitelnye.html">Строительные работы</a></li>
@@ -170,27 +142,27 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle"> Персонал ▾</a>
+                        <a href="#" class="dropdown-toggle">👷 Персонал ▾</a>
                         <ul class="dropdown-menu">
                             <li><a href="gruzchiki.html">Грузчики</a></li>
                             <li><a href="raznorabocie.html">Разнорабочие</a></li>
                         </ul>
                     </li>
-                    <li><a href="index.html#order"> Заявка</a></li>
-                    <li><a href="index.html#contacts"> Контакты</a></li>
+                    <li><a href="index.html#order">📝 Заявка</a></li>
+                    <li><a href="index.html#contacts">📍 Контакты</a></li>
                 </ul>
             </nav>
         </header>
 
         <div class="page-header">
             <a href="index.html" class="back-link">← Назад</a>
-            <h1> Грузчики</h1>
+            <h1>🚚 Грузчики</h1>
         </div>
 
         <div class="detail-section">
             <h2>Профессиональные грузчики 24/7</h2>
             <p>Мы предоставляем квалифицированных грузчиков для любых задач. Работаем круглосуточно, без выходных.</p>
-            <h3> Что мы делаем</h3>
+            <h3>🔹 Что мы делаем</h3>
             <ul>
                 <li>✅ Погрузка и разгрузка фур, контейнеров</li>
                 <li>✅ Перемещение мебели, техники, стройматериалов</li>
@@ -201,7 +173,7 @@
         </div>
 
         <div class="detail-section">
-            <h3> Цены на услуги грузчиков</h3>
+            <h3>💰 Цены на услуги грузчиков</h3>
             <table class="price-table">
                 <tr><th>Услуга</th><th>Стоимость</th></tr>
                 <tr><td>1 грузчик (1 час)</td><td>от 500 ₽</td></tr>
@@ -210,16 +182,11 @@
                 <tr><td>Квартирный переезд</td><td>от 3 000 ₽</td></tr>
             </table>
             <p class="price-note">* Цены зависят от объёма и сложности работ. Уточняйте по телефону.</p>
-            <a href="https://forms.yandex.ru/u/6a3a60756d2d733ed1423b87/?service=Грузчики" 
-            target="_blank" 
-            class="order-btn">
-            Заказать грузчиков
-         </a>
+            <a href="index.html#order" class="order-btn">📝 Заказать грузчиков</a>
         </div>
 
         <footer class="footer"><p>© 2026 Грузчики и разнорабочие · Круглосуточно 24/7</p></footer>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const themeToggle = document.getElementById('themeToggle');
