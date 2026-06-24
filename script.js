@@ -48,3 +48,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// ===== АВТООПРЕДЕЛЕНИЕ ТЁМНОЙ ТЕМЫ СИСТЕМЫ =====
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // Если в системе включена тёмная тема
+    if (!localStorage.getItem('theme')) {
+        document.body.classList.add('dark-mode');
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) themeToggle.textContent = '☀️ Светлая';
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+// Слушаем изменение темы в системе
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+    if (e.matches) {
+        document.body.classList.add('dark-mode');
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) themeToggle.textContent = '☀️ Светлая';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.body.classList.remove('dark-mode');
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) themeToggle.textContent = '🌙 Тёмная';
+        localStorage.setItem('theme', 'light');
+    }
+});
