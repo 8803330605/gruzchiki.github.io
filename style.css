@@ -806,3 +806,84 @@ body {
         padding: 0.8rem 0.5rem;
     }
 }
+
+/* ===== ФИКСИРОВАННАЯ КНОПКА ТЕЛЕФОНА ===== */
+.fixed-phone {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #cc0000;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(204, 0, 0, 0.4);
+    z-index: 999;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    animation: phone-pulse 2s infinite;
+}
+
+.fixed-phone:hover {
+    transform: scale(1.1);
+    background: #990000;
+    box-shadow: 0 6px 25px rgba(204, 0, 0, 0.6);
+}
+
+.fixed-phone svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Анимация пульсации */
+@keyframes phone-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(204, 0, 0, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(204, 0, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(204, 0, 0, 0);
+    }
+}
+
+/* ===== ДЛЯ ТЁМНОЙ ТЕМЫ ===== */
+.dark-mode .fixed-phone {
+    background: #cc0000;
+    box-shadow: 0 4px 15px rgba(204, 0, 0, 0.6);
+}
+
+.dark-mode .fixed-phone:hover {
+    background: #ff1a1a;
+}
+
+/* ===== ДЛЯ МОБИЛЬНЫХ ===== */
+@media (max-width: 768px) {
+    .fixed-phone {
+        width: 55px;
+        height: 55px;
+        bottom: 15px;
+        right: 15px;
+    }
+    .fixed-phone svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fixed-phone {
+        width: 50px;
+        height: 50px;
+        bottom: 12px;
+        right: 12px;
+    }
+    .fixed-phone svg {
+        width: 22px;
+        height: 22px;
+    }
+}
