@@ -623,3 +623,186 @@ body {
 .order-btn:hover {
     background: var(--red-dark);
 }
+
+/* ===== АДАПТИВ ДЛЯ ТЕЛЕФОНОВ ===== */
+@media (max-width: 768px) {
+    /* Хедер */
+    .header {
+        padding: 0.8rem 0.5rem 0.5rem;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .header-top {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .header-right {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .theme-btn {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .phone-button {
+        font-size: 1rem;
+        padding: 0.4rem 1.2rem;
+    }
+
+    /* Меню */
+    .nav-list {
+        flex-direction: column;
+        gap: 0.3rem;
+        align-items: center;
+    }
+
+    .nav-list > li > a {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        border-left: 3px solid var(--red);
+        padding-left: 1rem;
+        background: var(--bg-container);
+        margin-top: 0.2rem;
+        backdrop-filter: var(--blur);
+        min-width: auto;
+    }
+
+    /* Контент */
+    .page-wrapper {
+        padding: 0 0.5rem 0.5rem;
+    }
+
+    .content-wrapper {
+        padding: 1rem 0.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero-desc {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+    }
+
+    .hero-button {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Сетки */
+    .advantages,
+    .services-grid,
+    .outsourcing-grid,
+    .contacts-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+
+    .advantage-item,
+    .service-item,
+    .outsourcing-item,
+    .contact-item {
+        padding: 1rem;
+    }
+
+    .advantage-icon,
+    .service-icon,
+    .outsourcing-icon,
+    .contact-icon {
+        font-size: 2rem;
+    }
+
+    .advantage-text h3,
+    .service-item h3,
+    .outsourcing-item h3 {
+        font-size: 0.95rem;
+    }
+
+    .advantage-text p,
+    .service-item p {
+        font-size: 0.8rem;
+    }
+
+    /* ФОРМА */
+    .form-container {
+        padding: 1rem;
+    }
+
+    .form-container iframe {
+        height: 1200px !important;
+        width: 100% !important;
+    }
+
+    /* Контакты */
+    .contacts-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-item a {
+        font-size: 0.9rem;
+    }
+
+    /* Подвал */
+    .footer {
+        font-size: 0.75rem;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .advantages,
+    .services-grid,
+    .outsourcing-grid,
+    .contacts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+
+    .header {
+        padding: 0.5rem 0.3rem 0.3rem;
+    }
+
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+
+    .phone-button {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .form-container iframe {
+        height: 1400px !important;
+    }
+
+    .content-wrapper {
+        padding: 0.8rem 0.5rem;
+    }
+}
