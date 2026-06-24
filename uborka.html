@@ -126,13 +126,13 @@
         }
 
         /* ===== КОНТЕЙНЕР ===== */
-.container {
+        .container {
     max-width: 1050px;
     margin: 0 auto;
     background: var(--bg-container);
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
-    padding: 2rem 1.5rem;
+    padding: 0rem 0rem;
     box-shadow: 0 10px 40px var(--shadow-color);
     transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
 }
@@ -147,10 +147,16 @@
     background: var(--bg-container);
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
-    padding: 1.5rem 2rem 1.2rem;
+    padding: 0rem 2rem 1.2rem;
     border-bottom: 3px solid var(--red);
     transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
     box-sizing: border-box;
+}
+
+.dark-mode .header {
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
     </style>
 </head>
@@ -158,17 +164,17 @@
     <div class="container">
         <header class="header">
             <div class="header-top">
-                <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;"><h1>🚚 Грузчики 24/7</h1></a></div>
+                <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;"><h1> Грузчики 24/7</h1></a></div>
                 <div class="header-right">
                     <button id="themeToggle" class="theme-btn">🌙 Тёмная</button>
-                    <a href="tel:+79001234567" class="phone-button">📞 +7 (914) 337-13-27</a>
+                    <a href="tel:+79001234567" class="phone-button"> +7 (914) 337-13-27</a>
                 </div>
             </div>
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html">🏠 Главная</a></li>
+                    <li><a href="index.html"> Главная</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">📦 Услуги ▾</a>
+                        <a href="#" class="dropdown-toggle"> Услуги ▾</a>
                         <ul class="dropdown-menu">
                             <li><a href="pereezdy.html">Переезды</a></li>
                             <li><a href="stroitelnye.html">Строительные работы</a></li>
@@ -182,21 +188,21 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">👷 Персонал ▾</a>
+                        <a href="#" class="dropdown-toggle"> Персонал ▾</a>
                         <ul class="dropdown-menu">
                             <li><a href="gruzchiki.html">Грузчики</a></li>
                             <li><a href="raznorabocie.html">Разнорабочие</a></li>
                         </ul>
                     </li>
-                    <li><a href="index.html#order">📝 Заявка</a></li>
-                    <li><a href="index.html#contacts">📍 Контакты</a></li>
+                    <li><a href="index.html#order"> Заявка</a></li>
+                    <li><a href="index.html#contacts"> Контакты</a></li>
                 </ul>
             </nav>
         </header>
 
         <div class="page-header">
             <a href="index.html" class="back-link">← Назад</a>
-            <h1>🗑️ Уборка и вывоз мусора</h1>
+            <h1> Уборка и вывоз мусора</h1>
         </div>
 
         <div class="detail-section">
@@ -213,7 +219,7 @@
         </div>
 
         <div class="detail-section">
-            <h3>💰 Стоимость уборки и вывоза</h3>
+            <h3> Стоимость уборки и вывоза</h3>
             <table class="price-table">
                 <tr><th>Услуга</th><th>Стоимость</th></tr>
                 <tr><td>Уборка квартиры (1-комн.)</td><td>от 2 000 ₽</td></tr>
@@ -223,7 +229,7 @@
                 <tr><td>Вывоз крупногабарита</td><td>от 2 000 ₽</td></tr>
             </table>
             <p class="price-note">* Цены зависят от объёма. Уточняйте по телефону.</p>
-            <a href="index.html#order" class="order-btn">📝 Заказать уборку</a>
+            <a href="index.html#order" class="order-btn"> Заказать уборку</a>
         </div>
 
         <footer class="footer"><p>© 2026 Грузчики и разнорабочие · Круглосуточно 24/7</p></footer>

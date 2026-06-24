@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function setTheme(theme) {
         if (theme === 'dark') {
             document.body.classList.add('dark-mode');
-            if (themeToggle) themeToggle.textContent = 'Светлая тема';
+            if (themeToggle) themeToggle.textContent = '☀️ Светлая';
         } else {
             document.body.classList.remove('dark-mode');
-            if (themeToggle) themeToggle.textContent = 'Тёмная тема';
+            if (themeToggle) themeToggle.textContent = '🌙 Тёмная';
         }
         localStorage.setItem('theme', theme);
     }
