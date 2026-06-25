@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function calcPrice() {
     const hours = parseInt(document.getElementById('calcHours').value) || 1;
     const workers = parseInt(document.getElementById('calcWorkers').value) || 1;
-    const rate = parseInt(document.getElementById('calcType').value) || 500;
+    const rate = parseInt(document.getElementById('calcType').value) || 450;
     const total = hours * workers * rate;
     document.getElementById('calcPrice').textContent = total.toLocaleString() + ' ₽';
 }
@@ -77,6 +77,5 @@ document.addEventListener('DOMContentLoaded', function() {
         input.addEventListener('change', calcPrice);
         input.addEventListener('input', calcPrice);
     });
-    // Первый расчёт
     calcPrice();
 });

@@ -89,6 +89,53 @@
         .dark-mode .contacts-page-item p { color: #cccccc; }
         .dark-mode .contacts-page-item a { color: #ff3333; }
         .dark-mode .map-container { border-color: #cc0000; }
+
+        /* ===== МЕССЕНДЖЕРЫ ===== */
+.messengers {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.max-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 14px;
+    background: #1a73e8;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 25px rgba(26, 115, 232, 0.25);
+    transition: 0.3s ease;
+}
+
+.max-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(26, 115, 232, 0.35);
+}
+
+.max-btn__hint {
+    display: block;
+    font-size: 0.75rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.dark-mode .max-btn {
+    background: #2b7be8;
+}
+
+        /* ===== ФОН ДЛЯ ПЕРЕЕЗДОВ ===== */
+        body {
+            background-image: url('images/фон-переезды.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
 <body>
@@ -153,12 +200,9 @@
                 <h3>Режим работы</h3>
                 <p><strong>Круглосуточно</strong><br />Без выходных и праздников</p>
             </div>
-            <div class="contacts-page-item">
-                <div class="contacts-page-icon"></div>
-                <h3>Адрес</h3>
-                <p>г. Находка,<br />ул. Примерная, д. 10</p>
-            </div>
+
         </div>
+
 
         <!-- ===== КАРТА ===== -->
         <!-- ===== ФОРМА СВЯЗИ (Яндекс Формы) ===== -->
