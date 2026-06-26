@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Контакты · Грузчики 24/7</title>
+    <title>Калькулятор стоимости · Грузчики 24/7</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.png" type="image/png" />
     <style>
@@ -29,112 +29,93 @@
             margin: 0;
             color: #1a1a1a;
         }
-        .contacts-page-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        .contacts-page-item {
-            background: #ffffff;
+        .calculator-container {
+            background: var(--bg-card);
             padding: 2rem;
-            text-align: center;
-            border: 1px solid #cc0000;
+            border: 2px solid var(--red);
+            margin-bottom: 2rem;
+            transition: background 0.3s;
+        }
+        .calculator {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .calc-row label {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+        .calc-row input,
+        .calc-row select {
+            width: 150px;
+            padding: 0.5rem 0.8rem;
+            border: 1px solid var(--border-color);
+            font-size: 1rem;
+            background: var(--bg-container);
+            color: var(--text-primary);
+            transition: border 0.3s;
+        }
+        .calc-row input:focus,
+        .calc-row select:focus {
+            border-color: var(--red);
+            outline: none;
+        }
+        .calc-result {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-top: 2px solid var(--red);
+            border-bottom: 2px solid var(--red);
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .calc-price {
+            color: var(--red);
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+        .calc-btn {
+            width: 100%;
+            background: var(--red);
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.8rem;
+            border: none;
+            cursor: pointer;
             transition: 0.3s ease;
         }
-        .contacts-page-item:hover {
-            border-color: #990000;
-            box-shadow: 0 5px 20px rgba(204,0,0,0.08);
+        .calc-btn:hover {
+            background: var(--red-dark);
         }
-        .contacts-page-icon {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
+        .calc-note {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
         }
-        .contacts-page-item h3 {
-            font-size: 1rem;
-            color: #555555;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
+        .dark-mode .calculator-container {
+            background: var(--bg-card);
         }
-        .contacts-page-item a {
-            color: #cc0000;
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 1.2rem;
+        .dark-mode .calc-row input,
+        .dark-mode .calc-row select {
+            background: var(--bg-container);
+            color: var(--text-primary);
+            border-color: var(--border-color);
         }
-        .contacts-page-item a:hover {
-            text-decoration: underline;
-            color: #990000;
-        }
-        .contacts-page-item p {
-            color: #1a1a1a;
-            font-size: 1rem;
-        }
-        .map-container {
-            border: 1px solid #cc0000;
-            margin-bottom: 2rem;
-            overflow: hidden;
-        }
-        .map-container iframe {
-            display: block;
-            width: 100%;
-            height: 400px;
-            border: none;
-        }
-        .dark-mode .page-header h1 { color: #f0f0f0; }
-        .dark-mode .contacts-page-item { background: #333333; border-color: #cc0000; }
-        .dark-mode .contacts-page-item h3 { color: #aaaaaa; }
-        .dark-mode .contacts-page-item p { color: #cccccc; }
-        .dark-mode .contacts-page-item a { color: #ff3333; }
-        .dark-mode .map-container { border-color: #cc0000; }
-
-        /* ===== МЕССЕНДЖЕРЫ ===== */
-.messengers {
-    display: flex;
-    justify-content: center;
-    margin: 1.5rem 0;
-}
-
-.max-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 24px;
-    border-radius: 14px;
-    background: #1a73e8;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-    box-shadow: 0 10px 25px rgba(26, 115, 232, 0.25);
-    transition: 0.3s ease;
-}
-
-.max-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(26, 115, 232, 0.35);
-}
-
-.max-btn__hint {
-    display: block;
-    font-size: 0.75rem;
-    opacity: 0.9;
-    font-weight: 400;
-}
-
-.dark-mode .max-btn {
-    background: #2b7be8;
-}
-
-        /* ===== ФОН ДЛЯ ПЕРЕЕЗДОВ ===== */
-        body {
-            background-image: url('images/фон-переезды.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+        .dark-mode .page-header h1 {
+            color: #f0f0f0;
         }
     </style>
 </head>
@@ -181,47 +162,63 @@
 
         <div class="page-header">
             <a href="index.html" class="back-link">← Назад</a>
-            <h1> Контакты</h1>
+            <h1> Калькулятор стоимости</h1>
         </div>
 
-        <!-- ===== КОНТАКТЫ ===== -->
-        <div class="contacts-page-grid">
-            <div class="contacts-page-item">
-                <div class="contacts-page-icon"></div>
-                <h3>Телефон</h3>
-                <a href="tel:+79001234567">+7 (914) 337-13-27</a>
+        <div class="calculator-container">
+            <div class="calculator">
+                <div class="calc-row">
+                    <label for="calcHours">Количество часов:</label>
+                    <input type="number" id="calcHours" value="2" min="1" max="24" />
+                </div>
+                <div class="calc-row">
+                    <label for="calcWorkers">Количество грузчиков:</label>
+                    <input type="number" id="calcWorkers" value="2" min="1" max="10" />
+                </div>
+                <div class="calc-row">
+                    <label for="calcType">Тип работы:</label>
+                    <select id="calcType">
+                        <option value="450">Грузчики</option>
+                        <option value="450">Разнорабочие</option>
+                        <option value="500">Переезды</option>
+                        <option value="550">Строительные работы</option>
+                        <option value="450">Разгрузка товаров</option>
+                        <option value="450">Уборка и вывоз мусора</option>
+                        <option value="600">Грузоперевозки</option>
+                        <option value="650">Аутсорсинг на производство</option>
+                        <option value="600">Аутсорсинг для ритейла</option>
+                        <option value="650">Аутсорсинг склада</option>
+                    </select>
+                </div>
+                <div class="calc-result">
+                    <span>💰 Примерная стоимость:</span>
+                    <span class="calc-price" id="calcPrice">2 700 ₽</span>
+                </div>
+                <button onclick="calcPrice()" class="calc-btn">Рассчитать</button>
+                <p class="calc-note">* Точная стоимость уточняется по телефону</p>
             </div>
-            <div class="contacts-page-item">
-                <div class="contacts-page-icon"></div>
-                <h3>Email</h3>
-                <a href="mailto:kimvitaly_81@mail.ru">kimvitaly_81@mail.ru</a>
-            </div>
-            <div class="contacts-page-item">
-                <div class="contacts-page-icon"></div>
-                <h3>Режим работы</h3>
-                <p><strong>Круглосуточно</strong><br />Без выходных и праздников</p>
-            </div>
-
-        </div>
-
-
-        <!-- ===== КАРТА ===== -->
-        <!-- ===== ФОРМА СВЯЗИ (Яндекс Формы) ===== -->
-        <h2 class="section-title"> Написать нам</h2>
-        <div class="form-container">
-            <iframe src="https://forms.yandex.ru/u/6a3bd4f75056908830a7c0f3/?iframe=1" 
-                    width="100%" 
-                    height="700" 
-                    frameborder="0" 
-                    name="ya-form-6a3bd4f75056908830a7c0f3">
-            </iframe>
-            <p class="form-note">Мы все прочтем</p>
         </div>
 
         <footer class="footer"><p>© 2026 Грузчики и разнорабочие · Круглосуточно 24/7</p></footer>
     </div>
+
     <script>
+        function calcPrice() {
+            const hours = parseInt(document.getElementById('calcHours').value) || 1;
+            const workers = parseInt(document.getElementById('calcWorkers').value) || 1;
+            const rate = parseInt(document.getElementById('calcType').value) || 450;
+            const total = hours * workers * rate;
+            document.getElementById('calcPrice').textContent = total.toLocaleString() + ' ₽';
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('#calcHours, #calcWorkers, #calcType');
+            inputs.forEach(function(input) {
+                input.addEventListener('change', calcPrice);
+                input.addEventListener('input', calcPrice);
+            });
+            calcPrice();
+
             const themeToggle = document.getElementById('themeToggle');
             if (localStorage.getItem('theme') === 'dark') {
                 document.body.classList.add('dark-mode');
@@ -239,6 +236,7 @@
                     }
                 });
             }
+
             document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
                 toggle.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -255,4 +253,4 @@
         });
     </script>
 </body>
-</html>ы
+</html>

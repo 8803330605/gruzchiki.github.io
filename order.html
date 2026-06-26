@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Контакты · Грузчики 24/7</title>
+    <title>Заявка · Грузчики 24/7</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.png" type="image/png" />
     <style>
@@ -29,112 +29,8 @@
             margin: 0;
             color: #1a1a1a;
         }
-        .contacts-page-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        .contacts-page-item {
-            background: #ffffff;
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid #cc0000;
-            transition: 0.3s ease;
-        }
-        .contacts-page-item:hover {
-            border-color: #990000;
-            box-shadow: 0 5px 20px rgba(204,0,0,0.08);
-        }
-        .contacts-page-icon {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-        .contacts-page-item h3 {
-            font-size: 1rem;
-            color: #555555;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
-        }
-        .contacts-page-item a {
-            color: #cc0000;
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-        .contacts-page-item a:hover {
-            text-decoration: underline;
-            color: #990000;
-        }
-        .contacts-page-item p {
-            color: #1a1a1a;
-            font-size: 1rem;
-        }
-        .map-container {
-            border: 1px solid #cc0000;
-            margin-bottom: 2rem;
-            overflow: hidden;
-        }
-        .map-container iframe {
-            display: block;
-            width: 100%;
-            height: 400px;
-            border: none;
-        }
-        .dark-mode .page-header h1 { color: #f0f0f0; }
-        .dark-mode .contacts-page-item { background: #333333; border-color: #cc0000; }
-        .dark-mode .contacts-page-item h3 { color: #aaaaaa; }
-        .dark-mode .contacts-page-item p { color: #cccccc; }
-        .dark-mode .contacts-page-item a { color: #ff3333; }
-        .dark-mode .map-container { border-color: #cc0000; }
-
-        /* ===== МЕССЕНДЖЕРЫ ===== */
-.messengers {
-    display: flex;
-    justify-content: center;
-    margin: 1.5rem 0;
-}
-
-.max-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 24px;
-    border-radius: 14px;
-    background: #1a73e8;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-    box-shadow: 0 10px 25px rgba(26, 115, 232, 0.25);
-    transition: 0.3s ease;
-}
-
-.max-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(26, 115, 232, 0.35);
-}
-
-.max-btn__hint {
-    display: block;
-    font-size: 0.75rem;
-    opacity: 0.9;
-    font-weight: 400;
-}
-
-.dark-mode .max-btn {
-    background: #2b7be8;
-}
-
-        /* ===== ФОН ДЛЯ ПЕРЕЕЗДОВ ===== */
-        body {
-            background-image: url('images/фон-переезды.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+        .dark-mode .page-header h1 {
+            color: #f0f0f0;
         }
     </style>
 </head>
@@ -181,33 +77,9 @@
 
         <div class="page-header">
             <a href="index.html" class="back-link">← Назад</a>
-            <h1> Контакты</h1>
+            <h1> Оставить заявку</h1>
         </div>
 
-        <!-- ===== КОНТАКТЫ ===== -->
-        <div class="contacts-page-grid">
-            <div class="contacts-page-item">
-                <div class="contacts-page-icon"></div>
-                <h3>Телефон</h3>
-                <a href="tel:+79001234567">+7 (914) 337-13-27</a>
-            </div>
-            <div class="contacts-page-item">
-                <div class="contacts-page-icon"></div>
-                <h3>Email</h3>
-                <a href="mailto:kimvitaly_81@mail.ru">kimvitaly_81@mail.ru</a>
-            </div>
-            <div class="contacts-page-item">
-                <div class="contacts-page-icon"></div>
-                <h3>Режим работы</h3>
-                <p><strong>Круглосуточно</strong><br />Без выходных и праздников</p>
-            </div>
-
-        </div>
-
-
-        <!-- ===== КАРТА ===== -->
-        <!-- ===== ФОРМА СВЯЗИ (Яндекс Формы) ===== -->
-        <h2 class="section-title"> Написать нам</h2>
         <div class="form-container">
             <iframe src="https://forms.yandex.ru/u/6a3bd4f75056908830a7c0f3/?iframe=1" 
                     width="100%" 
@@ -215,11 +87,12 @@
                     frameborder="0" 
                     name="ya-form-6a3bd4f75056908830a7c0f3">
             </iframe>
-            <p class="form-note">Мы все прочтем</p>
+            <p class="form-note">Наш менеджер свяжется с вами в течение 10 минут</p>
         </div>
 
         <footer class="footer"><p>© 2026 Грузчики и разнорабочие · Круглосуточно 24/7</p></footer>
     </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const themeToggle = document.getElementById('themeToggle');
@@ -239,6 +112,7 @@
                     }
                 });
             }
+
             document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
                 toggle.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -255,4 +129,4 @@
         });
     </script>
 </body>
-</html>ы
+</html>
