@@ -95,6 +95,7 @@
             border: none;
             cursor: pointer;
             transition: 0.3s ease;
+            text-decoration: none;
         }
         .calc-btn:hover {
             background: var(--red-dark);
@@ -117,6 +118,34 @@
         .dark-mode .page-header h1 {
             color: #f0f0f0;
         }
+
+                /* ===== КОНТЕЙНЕР ===== */
+                .container {
+    max-width: 1050px;
+    margin: 0 auto;
+    background: var(--bg-container);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    padding: 0rem 0rem;
+    box-shadow: 0 10px 40px var(--shadow-color);
+    transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
+}
+
+/* ===== ХЕДЕР ===== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    max-width: 1050px;
+    margin: 0 auto;
+    background: var(--bg-container);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    padding: 0rem 2rem 1.2rem;
+    border-bottom: 3px solid var(--red);
+    transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    box-sizing: border-box;
+}
     </style>
 </head>
 <body>
@@ -139,7 +168,6 @@
                             <li><a href="stroitelnye.html">Строительные работы</a></li>
                             <li><a href="razgruzka.html">Разгрузка товаров</a></li>
                             <li><a href="uborka.html">Уборка и вывоз мусора</a></li>
-                            <li><a href="gruzoperevozki.html">Грузоперевозки</a></li>
                             <li style="border-top:1px solid #cc0000;margin:0.3rem 0;"></li>
                             <li><a href="proizvodstvo.html">Аутсорсинг на производство</a></li>
                             <li><a href="riteyl.html">Аутсорсинг для ритейла</a></li>
@@ -154,7 +182,7 @@
                         </ul>
                     </li>
                     <li><a href="order.html"> Заявка</a></li>
-                    <li><a href="contacts.html"> Контакты</a></li>
+                    <li><a href="contacts.html"> Обратная связь</a></li>
                     <li><a href="calculator.html"> Калькулятор</a></li>
                 </ul>
             </nav>
@@ -184,7 +212,6 @@
                         <option value="550">Строительные работы</option>
                         <option value="450">Разгрузка товаров</option>
                         <option value="450">Уборка и вывоз мусора</option>
-                        <option value="600">Грузоперевозки</option>
                         <option value="650">Аутсорсинг на производство</option>
                         <option value="600">Аутсорсинг для ритейла</option>
                         <option value="650">Аутсорсинг склада</option>
@@ -194,7 +221,7 @@
                     <span>💰 Примерная стоимость:</span>
                     <span class="calc-price" id="calcPrice">2 700 ₽</span>
                 </div>
-                <button onclick="calcPrice()" class="calc-btn">Рассчитать</button>
+            <a href="order.html" class="calc-btn"> Оставить заявку</a>
                 <p class="calc-note">* Точная стоимость уточняется по телефону</p>
             </div>
         </div>
