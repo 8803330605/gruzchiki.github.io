@@ -945,3 +945,111 @@ body {
     color: var(--text-primary);
     border-color: var(--border-color);
 }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.service-item {
+    background: var(--bg-card);
+    padding: 1.5rem 1.2rem 1.8rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
+.service-item:hover {
+    border-color: var(--red);
+    box-shadow: 0 5px 20px rgba(204, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+.service-image {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.service-item h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+
+.service-item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.service-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--red);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.service-link:hover {
+    color: var(--red-dark);
+    text-decoration: underline;
+}
+
+/* ===== ТЁМНАЯ ТЕМА ===== */
+.dark-mode .service-item {
+    background: var(--bg-card);
+    border-color: #444444;
+}
+
+.dark-mode .service-image {
+    border: 1px solid #444444;
+}
+
+.dark-mode .service-item:hover {
+    border-color: var(--red);
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+    .service-item {
+        padding: 1rem 0.8rem 1.2rem;
+    }
+    .service-image {
+        height: 120px;
+    }
+    .service-icon {
+        font-size: 2rem;
+    }
+    .service-item h3 {
+        font-size: 1rem;
+    }
+    .service-item p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .service-image {
+        height: 160px;
+    }
+}
