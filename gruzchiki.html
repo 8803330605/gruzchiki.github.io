@@ -125,9 +125,30 @@
             border-color: #cc0000;
         }
 
-        /* ===== КОНТЕЙНЕР ===== */
-.container {
-    max-width: 1050px;
+        /* ===== ФОРМА НА ВСЮ ШИРИНУ ===== */
+        .form-container {
+            padding: 1rem 0 !important;
+            border: none !important;
+            background: transparent !important;
+        }
+        .form-container iframe {
+            width: 100% !important;
+            min-width: 100%;
+            display: block;
+            border: none;
+        }
+        @media (max-width: 768px) {
+            .form-container iframe {
+                height: 900px !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .form-container iframe {
+                height: 1100px !important;
+            }
+        }
+        .container {
+    max-width: 1100px;
     margin: 0 auto;
     background: var(--bg-container);
     backdrop-filter: var(--blur);
@@ -138,12 +159,11 @@
     will-change: transform;
 }
 
-/* ===== ХЕДЕР ===== */
 .header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    max-width: 1050px;
+    max-width: 1100px;
     margin: 0 auto;
     background: var(--bg-container);
     backdrop-filter: var(--blur);
@@ -155,32 +175,30 @@
     will-change: transform;
 }
 
-        /* ===== ФОН ДЛЯ ПЕРЕЕЗДОВ ===== */
-        body {
-         
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-        }
-
-
+.dark-mode .header {
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
     </style>
 </head>
 <body>
+
     <div class="container">
-        <header class="header">
-            <div class="logo">
-                <a href="index.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:10px;">
-                    <img src="favicon.png" alt="Грузчики 24/7" style="height:40px;width:auto;" />
-                    <h1 style="margin:0;">Грузчики 24/7</h1>
-                </a>
-            </div>
+
+        <header class="header" id="stickyHeader">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:inherit;">
+                        <h1> Грузчики 24/7</h1>
+                    </a>
+                </div>
                 <div class="header-right">
                     <button id="themeToggle" class="theme-btn">🌙 Тёмная</button>
                     <a href="tel:+79001234567" class="phone-button"> +7 (914) 337-13-27</a>
                 </div>
             </div>
+
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li><a href="index.html"> Главная</a></li>
@@ -206,16 +224,15 @@
                         </ul>
                     </li>
                     <li><a href="order.html"> Заявка</a></li>
-                    <li><a href="contacts.html"> Обратная связь</a></li>
                     <li><a href="calculator.html"> Калькулятор</a></li>
-
+                    <li><a href="contacts.html"> Контакты</a></li>
                 </ul>
             </nav>
         </header>
 
         <div class="page-header">
             <a href="index.html" class="back-link">← Назад</a>
-            <h1> Грузчики</h1>
+            <h1>Грузчики</h1>
         </div>
 
         <div class="detail-section">
@@ -232,52 +249,19 @@
         </div>
 
         <div class="detail-section">
-            <h3>Цены на услуги грузчиков</h3>
+            <h3> Цены на услуги грузчиков</h3>
             <table class="price-table">
                 <tr><th>Услуга</th><th>Стоимость</th></tr>
-                <tr><td>1 грузчик (1 час)</td><td>от 450 ₽</td></tr>
+                <tr><td>1 грузчик (1 час)</td><td>от 500 ₽</td></tr>
                 <tr><td>2 грузчика (1 час)</td><td>от 900 ₽</td></tr>
                 <tr><td>Разгрузка фуры (до 20 тонн)</td><td>от 5 000 ₽</td></tr>
+                <tr><td>Квартирный переезд</td><td>от 3 000 ₽</td></tr>
             </table>
             <p class="price-note">* Цены зависят от объёма и сложности работ. Уточняйте по телефону.</p>
             <a href="order.html" class="order-btn"> Заказать грузчиков</a>
         </div>
 
-        <footer class="footer"><p>© 2026 Грузчики и разнорабочие · Круглосуточно 24/7</p></footer>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const themeToggle = document.getElementById('themeToggle');
-            if (localStorage.getItem('theme') === 'dark') {
-                document.body.classList.add('dark-mode');
-                if (themeToggle) themeToggle.textContent = '☀️ Светлая';
-            }
-            if (themeToggle) {
-                themeToggle.addEventListener('click', function() {
-                    document.body.classList.toggle('dark-mode');
-                    if (document.body.classList.contains('dark-mode')) {
-                        this.textContent = '☀️ Светлая';
-                        localStorage.setItem('theme', 'dark');
-                    } else {
-                        this.textContent = '🌙 Тёмная';
-                        localStorage.setItem('theme', 'light');
-                    }
-                });
-            }
-            document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    this.parentElement.classList.toggle('open');
-                });
-            });
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.dropdown')) {
-                    document.querySelectorAll('.dropdown').forEach(function(item) {
-                        item.classList.remove('open');
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- ===== ФИКСИРОВАННАЯ КНОПКА ТЕЛЕФОНА ===== -->
+    <script src="script.js"></script>
 </body>
 </html>
